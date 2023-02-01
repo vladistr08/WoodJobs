@@ -1,0 +1,42 @@
+.ml-1 {
+    margin-left: 1em;
+}
+
+.mt-1 {
+    margin-top: 1em;
+}
+
+.bg-opac{
+    border-radius: 3em;
+    margin-top: 6em;
+    padding: 4em;
+    background-color: rgb(24,26,27,.9);
+}
+
+.forest-img {
+    padding-bottom: 2em;
+    margin-bottom: 0;
+
+
+    min-height: 15em;
+
+    /* Set background image to fixed (don't scroll along with the page) */
+
+    /* Center the background image */
+    background-position: center;
+
+    /* Set the background image to no repeat */
+    background-repeat: no-repeat;
+
+    /* Scale the background image to be as large as possible */
+    background-size: cover;
+
+    background-attachment: fixed;
+    background-image: url("https://images.pexels.com/photos/640809/pexels-photo-640809.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+}
+
+.footer-class {
+    margin-bottom: 0;
+    background-color: rgb(24,26,27)
+}
+
