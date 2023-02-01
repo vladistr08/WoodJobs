@@ -1,7 +1,7 @@
 import React from "react";
-import './Nav.css'
+import './main.css'
 
-function Nav(){
+const Nav = () => {
     return (
         <nav className="green darken-2">
             <div className="nav-wrapper">

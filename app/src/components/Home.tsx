@@ -1,7 +1,7 @@
 import React from "react";
-import './Home.css'
+import './main.css'
 
-function Home(){
+const Home = () => {
     return (
         <div className="container">
             <div className="row center">
