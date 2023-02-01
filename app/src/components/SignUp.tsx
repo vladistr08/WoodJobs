@@ -29,14 +29,14 @@ const SignIn = (props: any) => {
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <input id="firstName" type="text" className="validate white-text" value={firstName} onChange={input => setFName(input.target.value)}></input>
+                    <input id="firstName" type="text" className="white-text" value={firstName} onChange={input => setFName(input.target.value)}></input>
                     <label htmlFor="email">First Name</label>
 
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <input id="lastName" type="text" className="validate white-text" value={lastName} onChange={input => setLastName(input.target.value)}></input>
+                    <input id="lastName" type="text" className="white-text" value={lastName} onChange={input => setLastName(input.target.value)}></input>
                     <label htmlFor="email">Last Name</label>
 
                 </div>

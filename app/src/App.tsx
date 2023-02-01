@@ -7,8 +7,8 @@ import SignIn from "./components/SignIn";
 function App() {
   return (
       <div className="row">
-
-        <SignIn></SignIn>
+        <Nav/>
+        <Home/>
       </div>
   );
 }
