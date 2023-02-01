@@ -4,10 +4,10 @@ import {Link} from 'react-router-dom'
 
 const Nav = () => {
     return (
-        <nav className="amber accent-4">
+        <nav className="greyc nav-pos">
             <div className="nav-wrapper">
                 <Link to="/home" className="brand-logo ml-1">Woodjobs</Link>
-                <ul id="nav-mobile" className="right hide-on-med-and-down">
+                <ul id="nav-mobile" className="right hide-on-med-and-down ml-2">
                     <li>
                         <Link to="/home">
                             Home
