@@ -1,5 +1,5 @@
 import React, {useEffect, useState} from 'react'
-import './main.css'
+import '../components/css/main.css'
 import {useNavigate} from 'react-router-dom'
 
 const SignIn = (props: any) => {

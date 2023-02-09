@@ -1,15 +1,9 @@
 import React from 'react';
-import './App.css'
-import Nav from "./components/Nav";
-import Home from "./components/Home";
-import SignIn from "./components/SignIn";
+import SignIn from './page-components/SignIn'
 
-function App() {
+const App = () => {
   return (
-      <div className="row">
-        <Nav/>
-        <Home/>
-      </div>
+      <SignIn/>
   );
 }
 
