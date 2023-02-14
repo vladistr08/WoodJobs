@@ -6,6 +6,7 @@ import App from './App';
 import SignIn from "./page-components/SignIn";
 import SignUp from "./page-components/SignUp";
 import Home from './page-components/Home'
+import FindJob from './page-components/FindJobs'
 
 const router = createBrowserRouter([
     {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
     {
         path: "/home",
         element: <Home/>
+    },
+    {
+        path: "/home/find-jobs",
+        element: <FindJob/>
     }
 ]);
 

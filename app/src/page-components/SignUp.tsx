@@ -2,43 +2,11 @@ import React, {useEffect, useState} from 'react'
 import '../components/css/main.css'
 import {useNavigate} from 'react-router-dom'
 import {createAccount} from "../service/appwrite-config";
-import {ToastContainer, toast} from "react-toastify";
+import {ToastContainer} from "react-toastify";
+import {registerErrorToast, passErrorToast, inputErrorToast} from "../components/toasts";
 import 'react-toastify/dist/ReactToastify.css';
 
-const SignIn = (props: any) => {
-
-    const registerErrorToast = () => toast.error('Error at register, please try again!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-    });
-
-    const inputErrorToast = () => toast.error('Please provide a valid input!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-    });
-
-    const passErrorToast = () => toast.error('Passwords dont match!', {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "light",
-    });
+const SignUp = (props: any) => {
 
     const [firstName, setFName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -75,15 +43,7 @@ const SignIn = (props: any) => {
     return(
         <div className="container">
             <ToastContainer
-                position="top-right"
-                autoClose={4000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                draggable
 
-                theme="light"
             />
             {/* Same as */}
             <ToastContainer />
@@ -148,4 +108,4 @@ const SignIn = (props: any) => {
     )
 }
 
-export default SignIn;
+export default SignUp;

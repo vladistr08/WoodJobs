@@ -2,6 +2,7 @@ import {Client, Account, ID} from 'appwrite'
 import {IRegisterUserData, ILoginUserData} from "../types";
 import {v4 as uuid} from 'uuid'
 
+
 const client = new Client()
     .setEndpoint('http://localhost/v1')
     .setProject('63e4e6d41d5ce1b1df9e')
