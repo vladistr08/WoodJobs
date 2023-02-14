@@ -1,6 +1,6 @@
 import {Client, Account, ID} from 'appwrite'
 import {IRegisterUserData, ILoginUserData} from "../types";
-import {uuid} from 'uuidv4'
+import {v4 as uuid} from 'uuid'
 
 const client = new Client()
     .setEndpoint('http://localhost/v1')

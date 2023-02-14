@@ -2,8 +2,43 @@ import React, {useEffect, useState} from 'react'
 import '../components/css/main.css'
 import {useNavigate} from 'react-router-dom'
 import {createAccount} from "../service/appwrite-config";
+import {ToastContainer, toast} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const SignIn = (props: any) => {
+
+    const registerErrorToast = () => toast.error('Error at register, please try again!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
+    const inputErrorToast = () => toast.error('Please provide a valid input!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
+
+    const passErrorToast = () => toast.error('Passwords dont match!', {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+    });
 
     const [firstName, setFName] = useState('')
     const [lastName, setLastName] = useState('')
@@ -14,6 +49,10 @@ const SignIn = (props: any) => {
     const navigate = useNavigate()
 
     const handleSubmit = async (event: any)=>{
+        if(!email || !password || !lastName || !firstName){
+            inputErrorToast()
+            return
+        }
         if(password === rePassword){
 
             const name = lastName + ' ' + firstName
@@ -22,10 +61,10 @@ const SignIn = (props: any) => {
             if(response)
                 navigate('/signin', {replace:true})
             else
-                console.log('Error at login!')
+                registerErrorToast()
         }
         else{
-            console.log('Passwords dont match!')
+            passErrorToast()
         }
     }
 
@@ -35,6 +74,19 @@ const SignIn = (props: any) => {
 
     return(
         <div className="container">
+            <ToastContainer
+                position="top-right"
+                autoClose={4000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                draggable
+
+                theme="light"
+            />
+            {/* Same as */}
+            <ToastContainer />
             <div className="row center">
                 <div className="col s12 text-darken-4">
                     <h3 className="amber-text">Sign up | Woodjobs</h3>
