@@ -2,7 +2,7 @@ import React from 'react';
 import Nav from "../components/Nav";
 import HomeMainSeg from "../components/Home-main-seg";
 
-const FindJobs = () => {
+const Home = () => {
     return (
         <div className="row">
             <Nav/>
@@ -11,4 +11,4 @@ const FindJobs = () => {
     );
 }
 
-export default FindJobs;
+export default Home;
