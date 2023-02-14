@@ -1,17 +1,23 @@
 import React, {useEffect, useState} from 'react'
 import '../components/css/main.css'
 import {useNavigate} from 'react-router-dom'
+import {loginAccount} from "../service/appwrite-config";
 
 const SignIn = (props: any) => {
 
-    const [email, setEmail] = useState('')
-    const [password, setPassword] = useState('')
+    const [email, setEmail] = useState<string>('')
+    const [password, setPassword] = useState<string>('')
 
     const navigate = useNavigate()
 
     const handleSubmit = async (event: any)=>{
-        console.log(email + " " + password)
-        navigate('/home', {replace:true})
+        const response = await loginAccount({email, password})
+        if(response){
+            navigate('/home', {replace:true})
+        }
+        else{
+            console.log('Error at login!')
+        }
     }
 
     const handleChange  = (event: any)=>{
@@ -27,14 +33,16 @@ const SignIn = (props: any) => {
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <input id="email" type="email" className="validate white-text" value={email} onChange={input => setEmail(input.target.value)}></input>
+                    <input id="email" type="email" className="validate white-text" value={email}
+                           onChange={input => setEmail(input.target.value)}></input>
                     <label htmlFor="email">Email</label>
 
                 </div>
             </div>
             <div className="row">
                 <div className="input-field col s12">
-                    <input id="password" type="password" className="validate white-text" value={password} onChange={input => setPassword(input.target.value)}></input>
+                    <input id="password" type="password" className="validate white-text" value={password}
+                           onChange={input => setPassword(input.target.value)}></input>
                         <label htmlFor="password">Password</label>
 
                 </div>

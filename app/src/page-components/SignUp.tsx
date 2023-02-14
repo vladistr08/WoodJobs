@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import '../components/css/main.css'
 import {useNavigate} from 'react-router-dom'
+import {createAccount} from "../service/appwrite-config";
 
 const SignIn = (props: any) => {
 
@@ -13,7 +14,19 @@ const SignIn = (props: any) => {
     const navigate = useNavigate()
 
     const handleSubmit = async (event: any)=>{
-        navigate('/home', {replace:true})
+        if(password === rePassword){
+
+            const name = lastName + ' ' + firstName
+            const response = await createAccount({email, password, name})
+
+            if(response)
+                navigate('/signin', {replace:true})
+            else
+                console.log('Error at login!')
+        }
+        else{
+            console.log('Passwords dont match!')
+        }
     }
 
     const handleChange  = (event: any)=>{
