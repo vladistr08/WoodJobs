@@ -6,6 +6,10 @@
     margin-top: 1em;
 }
 
+.mt-3 {
+    padding-top: 5em;
+}
+
 .bg-opac{
     border-radius: 3em;
     margin-top: 6em;
@@ -50,6 +54,7 @@ body{
 .nav-pos {
     overflow: hidden;
     position: fixed;
+
 }
 
 
